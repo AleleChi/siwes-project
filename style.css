@@ -1,0 +1,156 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --bg-color: rgb(246,246,246)
+   
+    
+}
+
+header{
+    background-color: var(--bg-color);
+} */
+
+:root {
+  --bg-color: rgb(246, 246, 246);
+  --menu-color: rgb(1, 22, 56);
+  --sp-color: rgb(202, 21, 75);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  max-width: 1920;
+  max-height: 1024;
+}
+
+header {
+  background-color: var(--bg-color);
+  padding: 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 82.9px;
+  height: 61.77px;
+}
+
+.left-nav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font: Microsoft PhagsPa;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25.39px;
+}
+
+.left-nav li {
+  margin: 20px;
+}
+.left-nav a {
+  text-decoration: none;
+}
+.left-nav a:hover {
+  background-color: var(--menu-color);
+  color: var(--bg-color);
+  padding: 20px;
+  border-radius: 50px;
+}
+.second-list {
+  margin-left: auto;
+}
+
+.number {
+  color: var(--sp-color);
+  font-size: 20px;
+  line-height: 25.39px;
+  font: Microsoft PhagsPa;
+  font-weight: 700;
+}
+
+.right-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.right-nav li {
+  margin: 20px;
+}
+
+.second-list img {
+  width: 34px;
+  height: 34px;
+}
+
+h3 {
+  font-family: Almarai;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--sp-color);
+}
+
+h1 {
+  font-family: Microsoft New Tai Lue;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 126px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+p {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+span {
+  color: var(--sp-color);
+}
+.btn-btn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.bt-hire {
+  background-color: var(--sp-color);
+  width: 230px;
+  height: 60px;
+  color: var(--bg-color);
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 27px;
+  transition: all 0.2s;
+  border: none;
+}
+
+.bt-hire:hover {
+  background-color: var(--menu-color);
+}
+.right-nav li img {
+  transition: transform 0.3s ease;
+}
+
+.right-nav li img:hover {
+  transform: scale(1.2);
+  color: var(--menu-color);
+}
