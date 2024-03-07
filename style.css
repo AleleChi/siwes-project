@@ -1,32 +1,18 @@
-/* *{
-    margin: 0px;
-    padding: 0px;
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+
 }
 
-:root{
-    --bg-color: rgb(246,246,246)
-   
-    
-}
-
-header{
-    background-color: var(--bg-color);
-} */
-
+/* Root variables */
 :root {
   --bg-color: rgb(246, 246, 246);
   --menu-color: rgb(1, 22, 56);
   --sp-color: rgb(202, 21, 75);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  max-width: 1920;
-  max-height: 1024;
-}
-
+/* Header styles */
 header {
   background-color: var(--bg-color);
   padding: 80px;
@@ -43,12 +29,13 @@ header {
   height: 61.77px;
 }
 
+/* Left navigation styles */
 .left-nav {
   display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
-  font: Microsoft PhagsPa;
+  font-family: 'Microsoft PhagsPa';
   font-weight: 700;
   font-size: 20px;
   line-height: 25.39px;
@@ -57,15 +44,19 @@ header {
 .left-nav li {
   margin: 20px;
 }
+
 .left-nav a {
   text-decoration: none;
 }
+
 .left-nav a:hover {
   background-color: var(--menu-color);
   color: var(--bg-color);
   padding: 20px;
   border-radius: 50px;
 }
+
+/* Second list styles */
 .second-list {
   margin-left: auto;
 }
@@ -74,10 +65,11 @@ header {
   color: var(--sp-color);
   font-size: 20px;
   line-height: 25.39px;
-  font: Microsoft PhagsPa;
+  font-family: 'Microsoft PhagsPa';
   font-weight: 700;
 }
 
+/* Right navigation styles */
 .right-nav {
   display: flex;
   list-style: none;
@@ -89,13 +81,26 @@ header {
   margin: 20px;
 }
 
-.second-list img {
-  width: 34px;
-  height: 34px;
+/* Social icons styles */
+.social-icons {
+  margin: 20px;
 }
 
+.social-icons img {
+  margin: 5px 0 0 30px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  color: var(--menu-color);
+}
+
+/* Main heading styles */
 h3 {
-  font-family: Almarai;
+  font-family: 'Almarai';
   font-size: 48px;
   font-weight: 400;
   line-height: 54px;
@@ -105,15 +110,17 @@ h3 {
 }
 
 h1 {
-  font-family: Microsoft New Tai Lue;
+  font-family: 'Microsoft New Tai Lue';
   font-size: 96px;
   font-weight: 700;
   line-height: 126px;
   letter-spacing: 0em;
   text-align: center;
 }
+
+/* Paragraph styles */
 p {
-  font-family: Inter;
+  font-family: 'Inter';
   font-size: 24px;
   font-weight: 400;
   line-height: 29px;
@@ -124,11 +131,14 @@ p {
 span {
   color: var(--sp-color);
 }
+
+/* Button styles */
 .btn-btn {
   display: flex;
   justify-content: center;
   padding: 20px;
 }
+
 .bt-hire {
   background-color: var(--sp-color);
   width: 230px;
@@ -146,11 +156,110 @@ span {
 .bt-hire:hover {
   background-color: var(--menu-color);
 }
-.right-nav li img {
-  transition: transform 0.3s ease;
+
+
+/* Hamburger menu icon styles */
+
+
+/* CSS for animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.right-nav li img:hover {
-  transform: scale(1.2);
-  color: var(--menu-color);
+/* Apply animation to elements */
+h3, h1, p {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0; /* Ensures the elements start hidden */
+}
+
+@media  (max-width: 952px) {
+  .logo {
+    margin-right: auto; /* Push logo to the left */
+  }
+
+  nav ul li a{
+    font-size: 20px;
+  }
+}
+
+.icon{
+  display: none;
+}
+@media  (max-width: 858px) {
+  .icon{
+    display: block;
+  }
+  .logo {
+    margin-right: auto; /* Push logo to the left */
+  }
+  nav.icon{
+    display: block;
+    float: right;
+    position: fixed;
+  }
+
+  .second-list ul{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   transition: all .5s;
+   margin: 0 0 0 -40px;
+  }
+
+  .right-nav, .left-nav{
+  width: 445px;
+   position: relative;
+   right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+.social-icons{
+  display: flex;
+  margin: 0 0 0 -100px;
+}
+  nav ul li{
+    display: block;
+  }
+
+  nav ul li a{
+    font-size: 20px;
+    color: var(--menu-color);
+  }
+  ul li img{
+    display: inline-block;
+  }
+ 
+  h3{
+    font-size: 30px;
+    padding: 10px;
+  }
+  h1{
+    font-size: 55px;
+    padding: 10px;
+    line-height: 95px;
+  }
+
+  p{
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .bt-hire{
+    width: 400px;
+  }
+}
+
+@media (min-width: 1920){
+
 }

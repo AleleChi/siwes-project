@@ -1,47 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Profile</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <a href=""><img src="./logo.svg" alt="" /></a>
-        </div>
-        <ul class="left-nav">
-          <li><a href="">About Me</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href=""><img src="./logo.svg" alt="" /></a>
+      </div>
+      
+       
+  
+      <div class="topnav" id="myNav">
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
+        
+        
         <div class="second-list">
-          <ul class="right-nav">
-            <li class="number">(234 810 850 1037)</li>
-            <li><img src="./twitterIcon.png" alt="" /></li>
-            <li><img src="./instagram.png" alt="" /></li>
-            <li><img src="./settings.png" alt="" /></li>
+          
+          <ul class="right-nav active">
+            <div class="left-nav">
+              <li><a href="">About Me</a></li>
+              <li><a href="">Contact</a></li>
+              <li class="number"><a href="tel: +234 8108501037">(234 810 850 1037)</a></li>
+             
+            </div>
+
+            <div class="social-icons">
+              <img src="./twitterIcon.png" alt="" />
+              <img src="./instagram.png" alt="" />
+              <img src="./settings.png" alt="" />
+            </div>
           </ul>
         </div>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
-        <div class="class-header-1">
-          <h3>Hey I'm Alele Chi</h3>
-          <h1>
-            Freelance UI Designer &amp; <br />
-            Web <span> Developer</span>
-          </h1>
-          <p>
-            I'm a passionate web developer and UI designer, dedicated to
-            crafting immersive <br> digital experiences that blend functionality with
-            aesthetic appeal.
-          </p>
-          <div class="btn-btn"><button class="bt-hire">HIRE ME</button></div>
-        </div>
       </div>
-    </main>
-  </body>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="class-header-1">
+        <h3>Hey I'm Alele Chi</h3>
+        <h1>
+          Freelance UI Designer &amp; <br />
+          Web <span> Developer</span>
+        </h1>
+        <p>
+          I'm a passionate web developer and UI designer, dedicated to
+          crafting immersive <br />
+          digital experiences that blend functionality with aesthetic appeal.
+        </p>
+        <div class="btn-btn"><button class="bt-hire">HIRE ME</button></div>
+      </div>
+    </div>
+  </main>
+  <script>
+    function toggleMenu(event) {
+      var menu = document.querySelector('.second-list');
+      if (menu.style.display === "block" || menu.style.display === "") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+     // event.preventDefault();
+      //event.stopPropagation();
+    }
+    
+    window.addEventListener('load', function() {
+      // Trigger the animation on page load
+      animateElements();
+    });
+    
+    window.addEventListener('scroll', function() {
+      // Trigger the animation when the elements come into view on scroll
+      animateElements();
+    });
+    
+    function animateElements() {
+      var elements = document.querySelectorAll('h3, h1, p');
+      elements.forEach(function(element) {
+        if (isElementInViewport(element)) {
+          element.style.opacity = '1';
+          element.style.animation = 'fadeInUp 1s ease forwards';
+        }
+      });
+    }
+    
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+    
+  </script>
+</body>
 </html>
